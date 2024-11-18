@@ -38,7 +38,7 @@
         static long UnixTimeStamp(Date date)
         {   // Pas besoin de comprendre le code, regardez seulement la signature
             DateTime d = new(year: date.annee, month: date.mois, day: date.jour);
-            DateTime unix = new(year:1970, month:1, day:1);
+            DateTime unix = new(year: 1970, month: 1, day: 1);
             return (long)Math.Round((d - unix).TotalSeconds);
         }
 
