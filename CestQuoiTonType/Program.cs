@@ -35,11 +35,11 @@
             return $"{a.noPorte} {a.rue} {a.ville} {a.province} {a.pays} {a.codePostal.ToUpper()}";
         }
 
-        static int UnixTimeStamp(Date date)
+        static long UnixTimeStamp(Date date)
         {   // Pas besoin de comprendre le code, regardez seulement la signature
             DateTime d = new(year: date.annee, month: date.mois, day: date.jour);
-            DateTime unix = new(1970, 1, 1);
-            return (d - unix).Seconds;
+            DateTime unix = new(year:1970, month:1, day:1);
+            return (long)Math.Round((d - unix).TotalSeconds);
         }
 
         static void Main(string[] _)
