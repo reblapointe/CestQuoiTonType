@@ -44,7 +44,7 @@
 
         static void Main(string[] _)
         {
-            Adresse alma = new Adresse
+            Adresse alma = new()
             {
                 noPorte = 123,
                 rue = "des Ormes",
@@ -55,16 +55,17 @@
             };
 
 
-            Date naissance = new Date
+            Date naissance = new()
             {
                 jour = 21,
                 mois = 4,
                 annee = 2006
             };
 
-            Etudiant fernand = new Etudiant
+            Etudiant fernand = new()
             {
-                nom = "Fernand",
+                nom = "Fitzgibbon",
+                prenom = "Fernand",
                 numDA = "1234567",
                 adresse = alma,
                 dateNaissance = naissance,
@@ -87,9 +88,9 @@
             var d = score.Length;
 
             var e = fernand;
-            var f = fernand.nom;
-            var g = fernand.nom[0];
-            var h = fernand.nom.Length;
+            var f = fernand.prenom;
+            var g = fernand.prenom[0];
+            var h = fernand.prenom.Length;
 
             var i = fernand.cours;
             var j = fernand.cours.Length;
@@ -98,16 +99,16 @@
             var m = fernand.cours[0][3];
 
             var n = fernand.cours.Length * score[0];
-            var o = fernand.nom == "Fernand";
+            var o = fernand.prenom == "Fernand";
             var p = fernand.nom.ToUpper();
-            var q = fernand.nom.ToUpper().Contains("M");
+            var q = fernand.nom.ToUpper().Contains('M');
 
             var r = score[0] / 100;
             var s = score[0] / 100.0;
             var t =
                 (fernand.adresse.ville == "Jonquière"
                 || fernand.adresse.ville == "Chicoutimi")
-                && fernand.prenom == "Québec";
+                && fernand.adresse.province == "Québec";
 
             var u = DecrireAdresse(fernand.adresse);
             var v = UnixTimeStamp(naissance);
